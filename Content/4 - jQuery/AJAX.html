@@ -8,11 +8,11 @@
 	<link rel="stylesheet" type="text/css" href="jqstyles_Animation.css">
 </head>
 <body>
-    <p id="hello">Hello worlds</p>
+    <p id="text">Hello worlds</p>
 
 	<script type="text/javascript">
-        $.ajax("Infoo.txt").done(function (data) {
-            alert(data);
+        $.ajax("Info.txt").done(function (data) {
+            $("#text").html(data);
         }).fail(function () {
             alert("Could not get data.")
         });
