@@ -11,8 +11,10 @@
     <p id="hello">Hello worlds</p>
 
 	<script type="text/javascript">
-        $.ajax("Info.txt").done(function (data) {
+        $.ajax("Infoo.txt").done(function (data) {
             alert(data);
+        }).fail(function () {
+            alert("Could not get data.")
         });
 
 	</script>
