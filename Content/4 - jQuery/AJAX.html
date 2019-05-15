@@ -11,10 +11,10 @@
     <p id="hello">Hello world</p>
 
 	<script type="text/javascript">
-        $.get("Info.txt", function (data) {
-            alert(data)
-            
-        })
+        $.ajax("Info.txt").done(function (data) {
+            alert(data);
+        });
+
 	</script>
 </body>
 </html>
