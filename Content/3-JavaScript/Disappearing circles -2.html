@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Circles!</title>
+	<style type="text/css">
+		.circle{
+			width: 100px;
+			height: 100px;
+			border-radius: 50%;
+			margin: 10px;
+			float: left;
+		}
+		#redc{
+			background-color: red;
+		}
+
+		#blue{
+			background-color: blue
+		}
+		#green{
+			background-color: green;
+		}
+		.butt{
+			background-color: none;
+		}
+	</style>
+
+	
+</head>
+<body>
+
+	<div id="redc" class="circle"></div>
+	<div id="blue" class="circle"></div>
+	<div id="green" class="circle"></div>
+
+	<button id="return">Come back!</button>
+
+	<script type="text/javascript">
+		document.getElementById('redc').onclick = function () {
+			document.getElementById('redc').style.display = "none";
+		}
+		document.getElementById('blue').onclick = function () {
+			document.getElementById('blue').style.display = "none";
+		}
+		document.getElementById('green').onclick = function () {
+			document.getElementById('green').style.display = "none";
+		}
+
+		document.getElementById('return').onclick = function () {
+			document.getElementById('greenbutton').style.display = "button";
+			document.getElementById('bluebutton').style.display = "button";
+			document.getElementById('redbutton').style.display = "button";
+		}
+
+		</script>
+
+</body>
+</html>

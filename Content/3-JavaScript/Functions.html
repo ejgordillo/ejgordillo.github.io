@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Functions</title>
+</head>
+<body>
+
+  <!-- HTML -->
+  <p>How many finger are YOU holding up?</p>
+  <select id="ans">
+  	<option>0</option>
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+  </select>
+  <button id="start">Start Guessing</button>
+
+
+	<script type="text/javascript">
+
+  	function doAguess(correctAns) {
+  		var cguess = Math.floor(Math.random()*6);
+
+  		if (cguess==correctAns) {
+      	  return true;
+        } else {
+          return false;
+  	}
+  }
+    document.getElementById("start").onclick = function () {
+
+      var answer = document.getElementById('ans').value;
+      
+      var gotit = false;
+      var i = 0;
+
+      while (gotit == false){
+
+      	if (doAguess(answer)== true) {
+      		alert("I finally got it after " + i + " guesses");
+      		gotit = true
+      	}else{
+      	 i++;
+      	}
+        
+   	  }
+	}
+    
+    console.log(cguess)
+	</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Loops</title>
+</head>
+<body>
+	<div id="twitter"></div>
+	<script type="text/javascript">
+		var tweets = ["Foo fighters are the best!","I have a craving for some hot dogs","Are dogs allowed to poop?", "How often do you see rain?"];
+		var htwet = [];
+
+		for (var i = 0; i < tweets.length; i++){
+			htwet = htwet + "<p>"+tweets[i]+"</p>"
+		}
+
+		document.getElementById('twitter').innerHTML = htwet
+		console.log(htwet)
+	</script>
+</body>
+</html>

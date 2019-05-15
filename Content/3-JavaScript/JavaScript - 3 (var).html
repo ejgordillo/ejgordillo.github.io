@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Circles!</title>
+	<style type="text/css">
+
+	</style>
+
+	
+</head>
+<body>
+
+	<input type="text" id="random">
+	<button id="butt">Change the text</button>
+	<p id="change">This is some text</p>
+
+	<script type="text/javascript">
+
+		
+
+		document.getElementById("butt").onclick = function (test) {
+			var textEntered = "";
+			textEntered = document.getElementById("random").value;
+			document.getElementById("change").innerHTML = textEntered;
+		}
+
+	</script>
+
+</body>
+</html>

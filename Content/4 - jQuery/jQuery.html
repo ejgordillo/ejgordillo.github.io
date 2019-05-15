@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>jQuery</title>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	
+	<link rel="stylesheet" type="text/css" href="jqstyles.css">
+</head>
+<body>
+	<p id="text">This is some text.</p>
+	<button id="action">Toogle</button>
+
+
+	<script type="text/javascript">
+
+
+		$("#action").click(function () {
+			if ($("#text").css("display") !== "none") {
+				$("#text").fadeOut();
+			}else{
+				$("#text").fadeIn();
+			}
+		});
+
+	</script>
+</body>
+</html>

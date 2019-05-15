@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>W Loops</title>
+</head>
+<body>
+
+  <!-- HTML -->
+  <p>How many finger are YOU holding up?</p>
+  <select id="ans">
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+    <option>4</option>
+    <option>5</option>
+  </select>
+  <button id="start">Start Guessing</button>
+
+
+  <script type="text/javascript">
+
+    document.getElementById("start").onclick = function () {
+
+      var answer = document.getElementById('ans').value;
+      
+      var gotit = false;
+      var i = 0;
+
+      while (gotit == false){
+
+        var cguess = Math.floor(Math.random()*6);
+
+        if (cguess==answer) {
+        alert("I finally got it after " + i + " guesses");
+        gotit = true;
+        } else {
+          i++;
+       }
+      }
+    }
+    
+    console.log(cguess)
+  </script>
+</body>
+</html>

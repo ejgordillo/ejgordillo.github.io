@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Loops</title>
+</head>
+<body>
+  <p>How many finger are YOU holding up?</p>
+  <input id="ans" type="text">
+  <button id="start">Start Guessing</button>
+  <script type="text/javascript">
+    var answer = document.getElementById('ans').value
+    var i = 0;
+    var cguess = "";
+
+
+    while (cguess !== answer){
+      cguess = math.floor(math.random * 6);
+      i++;
+    }
+
+    alert("I finally got it after " + i + "guesses")
+
+  </script>
+</body>
+</html>
