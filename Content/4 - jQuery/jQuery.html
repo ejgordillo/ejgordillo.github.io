@@ -1,29 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>jQuery</title>
+	<title>jQuerys</title>
 	
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-	<script src="jquery-ui.js"></script>
+	<script src="jquery-ui/jquery-ui.js"></script>
 
-	<link href="jquery-ui.css" rel="stylesheet">
+	<link href="jquery-ui/jquery-ui.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="jqstyles.css">
 
 	<style>
-		.dragg{
-			width: 100px;
+		#dragg{
+			width: 200px;
 			height: 100px;
-			background-color: blue;
+			background-color: lightblue;
+			padding: 5px;
+		}
+		#container{
+			width: 700px;
+			height: 700px;
+			margin: 0 auto;
+			border: 1px solid black;
+
+		}
+		#text{
+			font-size: 120%;
+			color: red
 		}
 	</style>
 </head>
 <body>
 
-	<div class="dragg">This is some text.</div>
+	<div id="container">
+		<div id="dragg">
+			<p id="text">Get me out of here!</p>
+		</div>
+	</div>
 
 	<script type="text/javascript">
-		$(".dragg").draggable()
-
+		$("#dragg").draggable({containment: "#container", scroll: false})
 	</script>
 </body>
 </html>
