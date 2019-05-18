@@ -15,6 +15,11 @@
 			height: 100px;
 			background-color: lightblue;
 		}
+		#also{
+			width: 200px;
+			height: 100px;
+			background-color: lightcoral;
+		}
 		#container{
 			width: 700px;
 			height: 700px;
@@ -26,18 +31,37 @@
 			color: red;
 			margin: 0;
 		}
+		.helper{
+			border: 1px dotted blue;
+
+		}
 	</style>
 </head>
 <body>
 
 	<div id="container">
 		<div id="dragg">
-			<p id="text">Get me out of here!</p>
+			<p id="text">Get me out of here! (Resize me to resize my brother)</p>
+		</div>
+	
+		<div id="also">
+			<p id="text">Get me out of here! (I'm the brother)</p>
 		</div>
 	</div>
+</div>
 
 	<script type="text/javascript">
-		$("#dragg").draggable({containment: "#container", scroll: false})
+		$("#dragg").draggable({containment: "#container", scroll: false});
+
+		$("#dragg").resizable({alsoResize: "#also", grid: 50});
+		
+		$("#also").resizable({
+			grid: 50,
+			resize: function (event, ui) {
+				if($("#also").width() == 300){
+					alert("Big enough!");
+				}
+		}}).draggable({containment: "parent"});
 	</script>
 </body>
 </html>

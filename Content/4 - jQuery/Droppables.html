@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Drops</title>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<script src="jquery-ui/jquery-ui.js"></script>
+
+	<link href="jquery-ui/jquery-ui.css" rel="stylesheet">
+
+
+	<style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        #container{
+            width: 1000px;
+            height: 1000px;
+            margin: 0 auto;
+            border: 2px dotted blue;
+        }
+        #bigSquare{
+            width: 500px;
+            height: 500px;
+            background-color: lightsalmon;
+            border: 1px solid green;
+            float: left;
+            margin: 50px;
+        }
+        #smallSquare{
+            width: 200px;
+            height: 200px;
+            background-color: lightblue;
+            display: block;
+            float: left;
+            margin: 50px;
+
+        }
+        .title{
+            background-color: gray;
+            margin: 0;
+        }
+        .dropped{
+            background-color: lightyellow !important;
+        }
+
+	</style>
+</head>
+<body>
+    <div id="container">
+        <div id="bigSquare">
+            <h3 class="title" class="dropped_title">Drop here!</h3>
+        </div>
+
+        <div id="smallSquare">
+            <h3 class="title">Drop me there!</h3>
+        </div>
+    </div>
+	<script type="text/javascript">
+        $("#bigSquare").droppable({
+            drop: function (event,ui) {
+                $(this).addClass("dropped")
+                .find("h3")
+                .html("Thanks!")
+                alert("Hi")
+            }
+        })
+        $("#smallSquare").draggable({
+            containment: "parent",
+        })
+	</script>
+</body>
+</html>
