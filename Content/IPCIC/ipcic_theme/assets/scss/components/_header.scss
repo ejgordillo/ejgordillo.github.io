@@ -1,0 +1,56 @@
+.header {
+  position: relative;
+  z-index: 999;
+  .navbar-nav{
+    width: 100% !important;
+    justify-content: center;
+    font-weight: bold;
+    margin-left: -4rem;
+  }
+  .nav__principal {
+    background-color: map-get($color, light);
+    border-bottom: .3rem solid map-get($color, second);
+    .logo {
+      width: 8rem;
+    }
+    a {
+      color: map-get($color, shadow) !important;
+    }
+    li {
+      padding: 0 2rem;
+    }
+  }
+
+}
+
+// $hero
+.hero {
+  text-align: center;
+  margin-top: -4.2rem;
+  padding: 4rem 0;
+  .hero__background {
+    z-index: 1;
+  }
+  .hero__info {
+    position: relative;
+    z-index: 90;
+  }
+  .hero__logo {
+    width: 16rem;
+    margin: 0 auto 2rem;
+    background: white;
+    padding: 3rem;
+  }
+  .heading {
+    text-transform: uppercase;
+    .subtitle {
+      color: map-get($color, light);
+      font-weight: 100;
+    }
+    .title {
+      color: map-get($color, second);
+      font-size: 3.5rem;
+      margin: 1.5rem;
+    }
+  }
+}

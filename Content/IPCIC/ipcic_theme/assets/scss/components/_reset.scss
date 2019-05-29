@@ -1,0 +1,26 @@
+/* # reset */
+*, *:after, *:before {
+  box-sizing: border-box;
+}
+html, body, h1, h2, h3, h4, h5, h6, ul, li, figure, .row {
+  margin: 0;
+  padding: 0;
+}
+figure img {
+  width: 100%;
+}
+a, a:hover {
+  text-decoration: none;
+}
+nav ul {
+  list-style: none;
+}
+body {
+  font-size: $text-size;
+  background-color: map-get($color, gray-light);
+}
+// $bootstrap
+.row {
+  margin-right: 0 !important;
+  margin-left: 0 !important;
+}
