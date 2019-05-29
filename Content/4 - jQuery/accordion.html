@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Drops</title>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<script src="jquery-ui/jquery-ui.js"></script>
+
+	<link href="jquery-ui/jquery-ui.css" rel="stylesheet">
+
+
+	<style>
+        #blank{
+            height: 50px;
+        }
+        #sortable{
+            width: 150px;
+            float: left;
+            list-style-type: none;
+        }
+        #sortable li{
+            margin: 5px;
+            padding: 5px;
+            height: 18px;
+            border: 1px solid gold;
+
+        }
+        .content{
+            width: 60%;
+            margin: 0 auto;
+        }
+	</style>
+</head>
+<body>
+    <div id="blank"></div>
+    <div id="accordion" class="content">
+        <h3>Hello</h3>
+        <div>
+            <p>How are you?</p>
+        </div>
+        <h3>Fine, and you?</h3>
+        <div>
+            <p>Ok, we don't have much time, they are watching.</p>
+        </div>
+        <h3>What?</h3>
+        <div>
+            <p>Don't be an idiot! They can read Header titles. But they don't know how to use an accordion.</p>
+        </div>
+        <h3>How can they not? Isn't it just point and click?</h3>
+        <div>
+            <p>Are you trying to get us killed? Just keep acting normal!</p>
+        </div>
+    </div>
+
+    <h2 class="content">This is now SORTABLE!</h2>
+    <div class="content">
+        <ul id="sortable">
+            <li class="content">Hi</li>
+            <li class="content">Hello</li>
+            <li class="content">How are you?</li>
+            <li class="content">Hey</li>
+        </ul>
+    </div>
+	<script type="text/javascript">
+        $("#accordion").accordion();
+        $("#sortable").sortable();
+	</script>
+</body>
+</html>

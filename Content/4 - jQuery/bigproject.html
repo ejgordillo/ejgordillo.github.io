@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CodePlayer</title>
+	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+	<script src="jquery-ui/jquery-ui.js"></script>
+
+	<link href="jquery-ui/jquery-ui.css" rel="stylesheet">
+
+
+	<style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        #header{
+            width: 100%;
+            height: 50px;
+            float: left;
+            margin: 0;
+            background-color: lightgray;
+        }
+        #header h3{
+            float: left;
+            margin: 10px;
+            font-size: 170%;
+        }
+        #header ul{
+            display: flex;
+            width: 180px;
+            margin: 8px;
+        }
+        #header li{
+            margin: 0 auto;
+            display: inline;
+            border: 2px gray solid;
+            padding: 5px;
+        }
+        #nav{
+            position: relative;
+            top: 1px;
+            left: 35%;
+        }
+        #header li:hover{
+            display: inline;
+            border: 2px gray solid;
+            padding: 5px;
+            background-color: blue;
+        }
+        .listStart{
+            border-radius: 6px 0 0 6px;
+            border-right: 0 !important;
+        }
+        .listEnd{
+            border-radius: 0 6px 6px 0;
+        }
+        .listcontent{
+            border-right: 0 !important;
+        }
+        #workpage{
+            width: 100%;
+            display: flex;
+        }
+        #htmlcode{
+            float: left;
+            border-right: 1px lightgray solid;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #csscode{
+            float: left;
+            border-right: 1px lightgray solid;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #jscode{
+            float: left;
+            border-right: 1px lightgray solid;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        #outputdiv{
+            float: left;
+            border-right: 1px lightgray solid;
+            background-color: lightpink;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        input{
+            width: 100%;
+            height: 100%;
+            text-align: initial;
+        }
+        .pressed{
+            background-color: lightblue;
+        }
+        .txtarea{
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            resize: none;
+        }
+	</style>
+</head>
+<body>
+    <div id="header">
+        <h3 id="title">CodePlayer</h3>
+        <ul id="nav">
+            <li class="listStart" id="htmlbut">HTML</li>
+            <li class="listcontent" id="cssbut">CSS</li>
+            <li class="listcontent" id="jsbut">JavaScript</li>
+            <li class="listEnd" id="outputbut">Output</li>
+        </ul>
+    </div>
+    <div id="workpage">
+        <div id="htmlcode" ><textarea class="txtarea" id="html"></textarea></div>
+        <div id="csscode"> <textarea class="txtarea" id="css"></textarea></div>
+        <div id="jscode"><textarea class="txtarea" id="js"></textarea></div>
+        <div id="outputdiv"></div>
+    </div>
+
+
+	<script type="text/javascript">
+        var htmlstat = true;
+        var cssstat = true;
+        var jsstat = true;
+        var outputstat = true;
+
+        $("#workpage").height($(window).height() - $("#header").height())
+
+        function tooglebut(button,name,stat) {
+            $(button).click(function () {
+            if (stat) {
+                $(name).fadeOut("fast").addClass("pressed");
+                stat = false;
+            }else{
+                $(name).fadeIn().removeClass("pressed");
+                stat = true;
+            }
+        })
+        }
+
+        function code(name) {
+            alert($(name).val())
+        }
+
+
+        // function editcontent(name) {
+        //     $(name).attr("contenteditable", "true")
+        // }
+
+        // editcontent(jscode)
+        // editcontent(cssbut)
+        // editcontent(htmlcode)
+
+
+        tooglebut(outputbut,outputdiv,outputstat)
+        tooglebut(htmlbut,htmlcode,htmlstat)
+        tooglebut(cssbut, csscode,cssstat)
+        tooglebut(jsbut,jscode,jsstat)
+
+
+
+        $("#html").keyup( function () {
+            $("#outputdiv").html($("#html").val())
+        }
+        )
+
+        $("#css").keyup( function () {
+            $("#outputdiv").prepend("<style>"+$("#css").val()+"</style>")
+        }
+        )
+
+        $("#js").keyup( function () {
+            var script = document.createElement("script");
+            script.innerHTML = $("#js").val();
+            $("#outputdiv").append(script); 
+        }
+        )
+
+        // <p id="text"> This is some text </p>
+        // #text{color: blue;}
+
+
+	</script>
+</body>
+</html>
